@@ -1,6 +1,6 @@
 import helpers
 import ejercicio3 as e3
-import ejercicio4 as e1
+import ejercicio4 as e4
 
 
 def iniciar():
@@ -73,7 +73,8 @@ def iniciar():
            
         
         if opcion == '4':
-            print("...\n")
+            print("Polinomio...\n")
+            pol = e4.Polinomio()
            
                 
         if opcion == '5':
