@@ -36,4 +36,29 @@ class Polinomio(object):
             return aux.info.valor
         else: 
             return 0
-        
+    
+    def sumar (polinomio1, polinomio2):
+        paux = Polinomio()
+        mayor = polinomio1 if (polinomio1.grado > polinomio2.grado) else polinomio2
+        for i in range(0, mayor.grado + 1):
+            total = Polinomio.obtener_valor(polinomio1, i) + Polinomio.obtener_valor(polinomio2, i)
+            if total != 0:
+                Polinomio.agregar_termino(paux, i , total)
+        return paux
+    
+    def multiplicar(polinomio1, polinomio2):
+        paux = Polinomio()
+        pol1 = polinomio1.termino_mayor
+        while pol1 is not None:
+            pol2 = polinomio2.termino_mayor
+            while pol2 is not None:
+                termino = pol1.info.termino + pol2.info.termino
+                valor = pol1.info.valor * pol2.info.valor
+                if Polinomio.obtener_valor(paux, termino) != 0:
+                    valor += Polinomio.obtener_valor(paux, termino)
+                    Polinomio.modificar_termino(paux, termino, valor)
+                else:
+                    Polinomio.agregar_termino(paux, termino, valor)
+                pol2 = pol2.sig
+            pol1 = pol1.sig
+        return paux
