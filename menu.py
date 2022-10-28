@@ -32,7 +32,7 @@ def iniciar():
             vehiculos = helpers.leer('vehicles.csv')
             helpers.limpiar(vehiculos)
             helpers.comas(vehiculos)
-            
+            print(vehiculos)
            
         
         if opcion == '4':
