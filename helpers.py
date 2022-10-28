@@ -18,3 +18,13 @@ def leer(csv_leer):
                 lista.append(linea) 
     
     return lista
+
+def limpiar(lista_dicc): # Le pasamos la lista de diccionarios
+    '''
+    leemos la listade diccionarios y cambiamos los blancos por None y las , por . 
+    IMPORTANTE: Todos los valores del diccionario son str.
+    '''
+    for i in lista_dicc: #Recorremos la lista y accedemos a los diccionarios
+        for j in i.keys(): #recogemos cada key de los diccionarios
+            if i[j] == '':
+                i[j] = None
