@@ -27,7 +27,9 @@ def limpiar(lista_dicc): # Le pasamos la lista de diccionarios
     for i in lista_dicc: #Recorremos la lista y accedemos a los diccionarios
         for j in i.keys(): #recogemos cada key de los diccionarios
             if i[j] == '':
-                i[j] = None
+                i[j] = 'NA'
+            if i[j] =='NA':
+                i[j] = 0
 
 def comas(a):
     '''

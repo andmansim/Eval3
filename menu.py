@@ -34,8 +34,10 @@ def iniciar():
             helpers.comas(vehiculos)
             nombre = e3.ordenar(vehiculos, 'name')
             largo = e3.ordenar(vehiculos, 'length')
-            print('fLista ordenada de nombres {nombre}')
-            #print(largo)
+            print('Lista ordenada de nombres')
+            print(nombre)
+            print('Lista ordenada de largo')
+            print(largo)
             
            
         
