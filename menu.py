@@ -49,6 +49,10 @@ def iniciar():
             naves1 = e3.naves(lista, tripulacion, 'tripulacion', 'nombre')
             print('La nave con mayot tripulación es:')
             print(naves1[0])
+            print('Naves que empiezan por AT')
+            for i in nombre:
+                if i.startswith('AT'):
+                    print(i)
             
             
             
