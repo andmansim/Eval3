@@ -61,6 +61,12 @@ def iniciar():
             
             naves2 = e3.naves(lista, pa, 'pasajeros', 'nombre')
             print(naves2)
+            print('Nave más pequeña:')
+            nave_p = e3.sacar_info(lista, largo[-1], 'largo')
+            print(nave_p)
+            print('La nave más grande:')
+            nave_g =e3.sacar_info(lista, largo[0], 'largo')
+            print(nave_g)
             
             
             

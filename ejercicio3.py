@@ -27,3 +27,8 @@ def naves(lista, lista2, nombre, nombre1):
         if i[nombre] in lista2:
             naves.append(i[nombre1])
     return naves
+
+def sacar_info(lista, dato, nombre):
+    for i in lista:
+        if i[nombre] == dato:
+            return i
