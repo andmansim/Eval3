@@ -20,3 +20,10 @@ def ordenar(lista, nombre):
         l_o.sort(reverse=True)
     return l_o
 
+
+def naves(lista, lista2, nombre, nombre1):
+    naves = []
+    for i in lista:
+        if i[nombre] in lista2:
+            naves.append(i[nombre1])
+    return naves

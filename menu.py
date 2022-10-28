@@ -1,5 +1,7 @@
 import helpers
 import ejercicio3 as e3
+import ejercicio1 as e1
+
 
 def iniciar():
      while True:
@@ -39,10 +41,16 @@ def iniciar():
             print(nombre)
             print('Lista ordenada de largo')
             print(largo)
-            if 'Stat of death' in nombre:
-                print('Si')
-            if 'Millenium Falcon' in nombre:
-                print('Si')
+            pasajeros = e3.ordenar(lista, 'pasajeros')
+            naves = e3.naves(lista, pasajeros, 'pasajeros', 'nombre')
+            print('Naves con mayor número de pasajeros:')
+            print(naves[0], naves[1], naves[2], naves[3], naves[4])
+            tripulacion = e3.ordenar(lista, 'tripulacion')
+            naves1 = e3.naves(lista, tripulacion, 'tripulacion', 'nombre')
+            print('La nave con mayot tripulación es:')
+            print(naves1[0])
+            
+            
             
            
         
