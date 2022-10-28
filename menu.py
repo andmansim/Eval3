@@ -31,13 +31,18 @@ def iniciar():
             print("Naves de Star Wars...\n")
             vehiculos = helpers.leer('vehicles.csv')
             helpers.limpiar(vehiculos)
-            #helpers.comas(vehiculos)
-            nombre = e3.ordenar(vehiculos, 'name')
-            largo = e3.ordenar(vehiculos, 'length')
+            lista = e3.filtrar(vehiculos)
+            nombre = e3.ordenar(lista, 'name')
+            largo = e3.ordenar(lista, 'length')
+            
             print('Lista ordenada de nombres')
             print(nombre)
             print('Lista ordenada de largo')
             print(largo)
+            if 'Stat of death' in nombre:
+                print('Si')
+            if 'Millenium Falcon' in nombre:
+                print('Si')
             
            
         
