@@ -1,5 +1,5 @@
 import helpers
-import principal as p
+import ejercicio3 as e3
 
 def iniciar():
      while True:
@@ -10,7 +10,7 @@ def iniciar():
         print("========================")
         print("[1] ")
         print("[2] ")
-        print("[3]  ")
+        print("[3] Naves Star Wars ")
         print("[4]  ")
         print("[5]  ")
         print("[6]  ")
@@ -28,8 +28,11 @@ def iniciar():
             
         
         if opcion == '3':
-            print("...\n")
-            # Comprobación de DNI válido
+            print("Naves de Star Wars...\n")
+            vehiculos = helpers.leer('vehicles.csv')
+            helpers.limpiar(vehiculos)
+            helpers.comas(vehiculos)
+            
            
         
         if opcion == '4':
