@@ -1,3 +1,6 @@
+class Nodo(object):
+    info, sig = None, None
+    
 class datoPolinomio(object):
     
     def __init__(self, valor, termino):
@@ -25,4 +28,12 @@ class Polinomio(object):
             aux = aux.sig
         aux.info.valor = valor
     
-    def obtener_valor(polonomio, termin)
+    def obtener_valor(polinomio, termino):
+        aux = polinomio.termino_mayor
+        while aux is not None and aux.info.termino > termino:
+            aux = aux.sig
+        if aux is not None and aux.info.termino == termino:
+            return aux.info.valor
+        else: 
+            return 0
+        
