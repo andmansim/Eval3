@@ -32,7 +32,9 @@ def iniciar():
             vehiculos = helpers.leer('vehicles.csv')
             helpers.limpiar(vehiculos)
             helpers.comas(vehiculos)
-            print(vehiculos)
+            print(e3.ordenar(vehiculos, 'name'))
+            print(e3.ordenar(vehiculos, 'length'))
+            
            
         
         if opcion == '4':
