@@ -53,6 +53,14 @@ def iniciar():
             for i in nombre:
                 if i.startswith('AT'):
                     print(i)
+            print('Naves que pueden llevar 6 o más pasajeros:')
+            pa = []
+            for i in pasajeros:
+                if i >= '6':
+                    pa.append(i)
+            
+            naves2 = e3.naves(lista, pa, 'pasajeros', 'nombre')
+            print(naves2)
             
             
             
