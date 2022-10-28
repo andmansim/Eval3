@@ -1,6 +1,20 @@
 import os
 import re #para comprobar si lo que nos dan está bien
 import platform #detecta el sistema operativo que queremos y lo adapta para poder trabajar con él.
+import csv
 
 def limpiar_pantalla():
     os.system('cls') if platform.system() == "Windows" else os.system('clear')
+
+import csv
+def leer(csv_leer):
+    '''
+    Leemos el csv y lo almacenamos en una lista de diccionarios
+    '''
+    lista = []
+    with open(csv_leer, newline="\n") as fichero:
+            reader = csv.DictReader(fichero, delimiter=",") #lo pasa a diccionario
+            for linea in reader:
+                lista.append(linea) 
+    
+    return lista
