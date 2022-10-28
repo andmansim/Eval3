@@ -32,8 +32,8 @@ def iniciar():
             vehiculos = helpers.leer('vehicles.csv')
             helpers.limpiar(vehiculos)
             lista = e3.filtrar(vehiculos)
-            nombre = e3.ordenar(lista, 'name')
-            largo = e3.ordenar(lista, 'length')
+            nombre = e3.ordenar(lista, 'nombre')
+            largo = e3.ordenar(lista, 'largo')
             
             print('Lista ordenada de nombres')
             print(nombre)
