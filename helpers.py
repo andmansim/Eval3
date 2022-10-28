@@ -28,3 +28,14 @@ def limpiar(lista_dicc): # Le pasamos la lista de diccionarios
         for j in i.keys(): #recogemos cada key de los diccionarios
             if i[j] == '':
                 i[j] = None
+
+def comas(a):
+    '''
+    Busca si hay alguna coma en los valores, y si es así ls reemplaza
+    IMPORT: Valores son str
+    '''
+    for u in a:
+        for h in u.keys():
+            
+            if u[h].find(','):
+                u[h] =  u[h].replace(',', '.')
