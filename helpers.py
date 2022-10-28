@@ -29,7 +29,7 @@ def limpiar(lista_dicc): # Le pasamos la lista de diccionarios
             if i[j] == '':
                 i[j] = 'NA'
             if i[j] =='NA':
-                i[j] = 0
+                i[j] = '0'
 
 def comas(a):
     '''
