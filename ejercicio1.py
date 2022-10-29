@@ -63,4 +63,6 @@ class Pila(object):
             dato = paux.desapilar(paux)
             paux.apilar(pila, dato)
 
-
+aguja1 = Pila()
+aguja2 = Pila()
+aguja3 = Pila()
