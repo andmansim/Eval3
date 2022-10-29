@@ -5,9 +5,9 @@ def filtrar(lista):
     for i in lista:
         dicc= {}
         dicc['nombre'] = i['name']
-        dicc['largo'] = i ['length']
-        dicc['pasajeros'] = i['passengers']
-        dicc['tripulacion'] = i ['crew']
+        dicc['largo'] = float(i['length'])
+        dicc['pasajeros'] = float(i['passengers'])
+        dicc['tripulacion'] = float(i ['crew'])
         lista1.append(dicc)
     return lista1
 
