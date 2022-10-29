@@ -9,13 +9,21 @@ matrz = [[1, 2, 3],
 '''
 
 
-def det_iterativa():
-    for i in range(3):
-        pri = i[0][] * i[1][] * i[2][]
-        seg = i[0][] * i[1][] * i[2][]
-        tri = i[0][] * i[1][] * i[2][]
-    sum = pri + seg + tri
-    return sum
+def det_iterativa(matriz):
+    i = 0
+    j = i+1
+    h = j +1
+    if i == 3:
+        i = 1
+    if j == 3:
+        j = 1
+    if  h== 3:
+        h = 1
+        
+    else:
+        pri = matriz[0][i] * matriz[1][i+1] * matriz[2][i+2]
+    
+    return pri
 
 matriz = [[1, 2, 3], 
           [2, 3, 4], 
