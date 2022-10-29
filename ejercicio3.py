@@ -26,7 +26,6 @@ def naves(lista, lista2, nombre, nombre1):
     naves = []
     for i in lista:
         if i[nombre] in lista2:
-            print(i[nombre])
             naves.append(i[nombre1])
     return naves
 
@@ -44,32 +43,31 @@ lista = filtrar(vehiculos)
 nombre = ordenar(lista, 'nombre')
 largo = ordenar(lista, 'largo')
 
-print('Lista ordenada de nombres')
-print(nombre)
-print('Lista ordenada de largo')
-print(largo)
+print('Lista ordenada de nombres ' + str(nombre) + '\n')
+print('Lista ordenada de largo ' + str(largo) + '\n')
+
 pasajeros = ordenar(lista, 'pasajeros')
 pasajeros1 = pasajeros[0:5]
 nave = naves(lista, pasajeros1, 'pasajeros', 'nombre')
-print('Naves con mayor número de pasajeros: ' + str(nave))
+print('Naves con mayor número de pasajeros: ' + str(nave) + '\n')
 tripulacion = ordenar(lista, 'tripulacion')
 naves1 = naves(lista, [tripulacion[0]], 'tripulacion', 'nombre')
-print('La nave con mayor tripulación es: ' + str(naves1))
+print('La nave con mayor tripulación es: ' + str(naves1) + '\n')
 print('Naves que empiezan por AT')
 for i in nombre:
     if i.startswith('AT'):
         print(i)
-print('Naves que pueden llevar 6 o más pasajeros:')
+
 pa = []
 for i in pasajeros:
     if i >= 6.0:
         pa.append(i)
 
 naves2 = naves(lista, pa, 'pasajeros', 'nombre')
-print(naves2)
-print('Nave más pequeña:')
+print('Naves que pueden llevar 6 o más pasajeros: ' + str(naves2) + '\n')
+
 nave_p = sacar_info(lista, largo[-1], 'largo')
-print(nave_p)
-print('La nave más grande:')
+print('Nave más pequeña: '+ str(nave_p)  + '\n')
+
 nave_g =sacar_info(lista, largo[0], 'largo')
-print(nave_g)
+print('La nave más grande: ' + str(nave_g)  + '\n')
