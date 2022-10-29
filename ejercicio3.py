@@ -1,6 +1,5 @@
 import helpers
 def filtrar(lista):
-   
     lista1 = []
     for i in lista:
         dicc= {}
@@ -34,7 +33,13 @@ def sacar_info(lista, dato, nombre):
         if i[nombre] == dato:
             return i
         
-        
+def añadir_datos(n, l, p, t):
+    dicc= {}
+    dicc['nombre'] = n
+    dicc['largo'] = float(l)
+    dicc['pasajeros'] = float(p)
+    dicc['tripulacion'] = float(t)
+    return dicc
 
 print("Naves de Star Wars...\n")
 vehiculos = helpers.leer('vehicles.csv')
@@ -46,6 +51,12 @@ largo = ordenar(lista, 'largo')
 print('Lista ordenada de nombres ' + str(nombre) + '\n')
 print('Lista ordenada de largo ' + str(largo) + '\n')
 
+halcon = añadir_datos('Halcón Milenario', 34.37, 4,4)
+estrella = añadir_datos('Estrella de la Muerte', 80000, 1200000 , 825984)
+lista.append(halcon)
+lista.append(estrella)
+print(lista[-1])
+print(lista[-2])
 pasajeros = ordenar(lista, 'pasajeros')
 pasajeros1 = pasajeros[0:5]
 nave = naves(lista, pasajeros1, 'pasajeros', 'nombre')
