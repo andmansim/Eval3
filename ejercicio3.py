@@ -50,7 +50,6 @@ print('Lista ordenada de largo')
 print(largo)
 pasajeros = ordenar(lista, 'pasajeros')
 pasajeros1 = pasajeros[0:5]
-print(pasajeros1)
 nave = naves(lista, pasajeros1, 'pasajeros', 'nombre')
 print('Naves con mayor número de pasajeros: ' + str(nave))
 tripulacion = ordenar(lista, 'tripulacion')
@@ -63,7 +62,7 @@ for i in nombre:
 print('Naves que pueden llevar 6 o más pasajeros:')
 pa = []
 for i in pasajeros:
-    if i >= '6':
+    if i >= 6.0:
         pa.append(i)
 
 naves2 = naves(lista, pa, 'pasajeros', 'nombre')
