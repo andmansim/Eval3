@@ -15,12 +15,10 @@ def ordenar(lista, nombre):
     l_o = []
     for i in lista:
         l_o.append(i[nombre])
-    print(l_o)
     if nombre == 'nombre':
         l_o.sort()
     else:
         l_o.sort(reverse=True)
-    print(l_o)
     return l_o
 
 
@@ -29,6 +27,7 @@ def naves(lista, lista2, nombre, nombre1):
     for i in lista:
         if i[nombre] in lista2:
             naves.append(i[nombre1])
+    print(naves)
     return naves
 
 def sacar_info(lista, dato, nombre):
@@ -50,6 +49,7 @@ print(nombre)
 print('Lista ordenada de largo')
 print(largo)
 pasajeros = ordenar(lista, 'pasajeros')
+print(pasajeros)
 nave = naves(lista, pasajeros, 'pasajeros', 'nombre')
 print('Naves con mayor número de pasajeros:')
 print(naves[0], naves[1], naves[2], naves[3], naves[4])
