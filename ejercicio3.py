@@ -28,7 +28,6 @@ def naves(lista, lista2, nombre, nombre1):
         if i[nombre] in lista2:
             print(i[nombre])
             naves.append(i[nombre1])
-    print(naves)
     return naves
 
 def sacar_info(lista, dato, nombre):
@@ -54,11 +53,9 @@ pasajeros1 = pasajeros[0:5]
 print(pasajeros1)
 nave = naves(lista, pasajeros1, 'pasajeros', 'nombre')
 print('Naves con mayor número de pasajeros: ' + str(nave))
-print(naves[0], naves[1], naves[2], naves[3], naves[4])
 tripulacion = ordenar(lista, 'tripulacion')
-naves1 = naves(lista, tripulacion, 'tripulacion', 'nombre')
-print('La nave con mayot tripulación es:')
-print(naves1[0])
+naves1 = naves(lista, tripulacion[0], 'tripulacion', 'nombre')
+print('La nave con mayor tripulación es: ' + str(naves1))
 print('Naves que empiezan por AT')
 for i in nombre:
     if i.startswith('AT'):
