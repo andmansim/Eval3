@@ -56,11 +56,11 @@ class Pila(object):
         #cuando terminamos, desapilamos paux y los volvemos a meter a la primera pila
         paux = Pila()
         while not pila.pila_vacia():
-            dato = pila.desapilar()
+            dato = paux.desapilar(pila)
             pila.apilar(paux, dato)
             return dato
         while not paux.pila_vacia():
-            dato = paux.desapilar()
+            dato = paux.desapilar(pila)
             paux.apilar(pila, dato)
             return dato
 
