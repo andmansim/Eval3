@@ -30,8 +30,10 @@ matriz = [[1, 2, 3],
 
 numero = 0
 suma = 0
-while numero != 3:
+resta = 0
+while numero != 6:
     uno, numero = det_iterativa(matriz, numero)
     numero = numero + 1
-    suma = suma + uno
-    print(suma)
+
+suma = suma + uno
+print(suma)
