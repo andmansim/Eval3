@@ -80,19 +80,29 @@ print(aguja1.en_cima())
 #ns = Pila.barrido(aguja1)
 def comprobar(aguja, disco):
     if aguja.en_cima() == None:
-        return True, pila
+        return True, aguja
     elif disco > aguja.en_cima():
-        return True, pila
+        return True, aguja
     else:
-        return False, pila
+        return False, aguja
 
 quito_d = aguja1.desapilar()
 c, pila = comprobar(aguja2, quito_d)
 print(c)
 def agujas(pila, dato):
     pila.apilar(dato)
-    
+    print(pila.en_cima())
+
+def cambio_aguja(resultado, agu1, agu2, agu3):
+    if resultado == agu1:
+        c, pila = comprobar(agu2, quito_d)
+    elif resultado == agu2:
+        c, pila = comprobar(agu3, quito_d)
+    else:
+        c, pila = comprobar(agu1, quito_d)
+    return c, pila
+
 if c:
     agujas(pila, quito_d)
 else:
-    agujas(pila, quito_d)
+   r, pilas = cambio_aguja(pila, aguja1, aguja2, aguja3)
