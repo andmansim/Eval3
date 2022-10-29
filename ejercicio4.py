@@ -37,6 +37,16 @@ class Polinomio(object):
         else: 
             return 0
     
+    def mostrar(polinomio):
+        aux = polinomio.termino_mayor
+        pol = ''
+        if aux is not None:
+            while aux is not None:
+                signo += '+'
+                pol += signo + str(aux.info.valor) + 'x^'+ str(aux.info.termino)
+                aux = aux.sig
+        return pol
+    
     def sumar (polinomio1, polinomio2):
         paux = Polinomio()
         mayor = polinomio1 if (polinomio1.grado > polinomio2.grado) else polinomio2
@@ -73,5 +83,19 @@ class Polinomio(object):
             pol1 = pol1.sig
         return paux
 
-polinomio1 = Polinomio()
-polinomio1.agregar_termino(9, 0)
+    def dividir(polinomio1, polinomio2):
+        paux = Polinomio()
+        pol1 = polinomio1.termino_mayor
+        while pol1 is not None:
+            pol2 = polinomio2.termino_mayor
+            while pol2 is not None:
+                termino = pol1.info.termino + pol2.info.termino
+                valor = pol1.info.valor * pol2.info.valor
+                if Polinomio.obtener_valor(paux, termino) != 0:
+                    valor += Polinomio.obtener_valor(paux, termino)
+                    Polinomio.modificar_termino(paux, termino, valor)
+                else:
+                    Polinomio.agregar_termino(paux, termino, valor)
+                pol2 = pol2.sig
+            pol1 = pol1.sig
+        return paux
