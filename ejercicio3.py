@@ -41,7 +41,7 @@ def añadir_datos(n, l, p, t):
     dicc['tripulacion'] = float(t)
     return dicc
 
-#
+#FALTA LOS UNITTEST Y PONERLO EN EL MENU
 print("Naves de Star Wars...\n")
 vehiculos = helpers.leer('vehicles.csv')
 helpers.limpiar(vehiculos)
