@@ -12,12 +12,12 @@ matrz = [[1, 2, 3],
 def det_iterativa(matriz, i):
     j = i+1
     h = j +1
-    if i == 3:
-        i = 1
-    if j == 3:
-        j = 1
-    if  h== 3:
-        h = 1
+    if i >= 3:
+        i = 0
+    if j >= 3:
+        j = 0
+    if  h>= 3:
+        h = 0
     pri = matriz[0][i] * matriz[1][j] * matriz[2][h]
     print(pri)
     return pri
@@ -28,5 +28,5 @@ matriz = [[1, 2, 3],
 
 numero = 0
 while numero != 3:
-    uno= det_iterativa(matriz)
+    uno= det_iterativa(matriz, numero)
     numero = numero + 1
