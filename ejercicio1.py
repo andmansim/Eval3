@@ -76,8 +76,6 @@ for i in range(1, 75):
     aguja1.apilar(i)
 print(aguja1.en_cima())
 
-
-#ns = Pila.barrido(aguja1)
 def comprobar(aguja, disco):
     if aguja.en_cima() == None:
         return True, aguja
@@ -103,11 +101,21 @@ def quitar_agujas(aguja):
     quito_d = aguja.desapilar()
     return quito_d
 
+def organizar(c, pila, quito_d):
+    if c:
+        agujas(pila, quito_d)
+    else:
+        c, pila = cambio_aguja(pila, aguja1, aguja2, aguja3)
+
 quito_d = quitar_agujas(aguja1)
 c, pila = comprobar(aguja2, quito_d)
 print(c)
 
-if c:
-    agujas(pila, quito_d)
-else:
-   c, pila = cambio_aguja(pila, aguja1, aguja2, aguja3)
+while aguja1.tamaño() != aguja3.tamaño():
+    if aguja1.pila_vacia() is not None:
+        quito_d = quitar_agujas(aguja1)
+        c, pila = cambio_aguja(pila, aguja1, aguja2, aguja3)
+        organizar(c, pila, quito_d)
+    else:
+        quito_d = quitar_agujas(aguja2)
+
