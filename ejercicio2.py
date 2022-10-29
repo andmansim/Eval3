@@ -16,14 +16,17 @@ def comprobacion(i, j, h):
         
     if  h >= 3:
         h = 0
-        
+    print(i, j, h)   
     return i, j, h
 def parametros(i, j, h):
     i = i +1
+    print(i, j, h)
     i, j, h = comprobacion(i, j, h)
     j = j+1
+    print(i, j, h)
     i, j, h = comprobacion(i, j, h)   
     h = h + 1
+    print(i, j, h)
     i, j, h = comprobacion(i, j, h)
     
     return i, j, h
@@ -52,7 +55,7 @@ while contador != 6:
     else:
         print(i, j, h)
         h, j, i = parametros(i, j, h)
-        print(i, j, h)
+        print(i, j, h) # NS PQ EL DOS NO ME VA. #AYDUA
         dos, i = det_iterativa(matriz, i, j, h)
         resta = resta + dos
     contador = contador + 1
