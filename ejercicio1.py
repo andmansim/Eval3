@@ -66,3 +66,8 @@ class Pila(object):
 aguja1 = Pila()
 aguja2 = Pila()
 aguja3 = Pila()
+
+for i in range(1, 74):
+    aguja1.apilar(i)
+
+print(aguja1.barrido(aguja1))
