@@ -15,10 +15,12 @@ def ordenar(lista, nombre):
     l_o = []
     for i in lista:
         l_o.append(i[nombre])
+    print(l_o)
     if nombre == 'nombre':
         l_o.sort()
     else:
         l_o.sort(reverse=True)
+    print(l_o)
     return l_o
 
 
