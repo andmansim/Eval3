@@ -47,7 +47,7 @@ class Pila(object):
         
     def tamaño(pila):
         #Devuelve el numero de elementos en la pila
-        return pila.tamaño
+        return pila.tamanio
 
 
     def barrido(pila):
@@ -80,6 +80,7 @@ def comprobar(aguja, disco):
 def agujas(pila, dato):
     pila.apilar(dato)
     print(pila.en_cima())
+    return pila
 
 def cambio_aguja(resultado, agu1, agu2, agu3):
     if resultado == agu1:
@@ -96,7 +97,7 @@ def quitar_agujas(aguja):
 
 def organizar(c, pila, quito_d):
     if c:
-        agujas(pila, quito_d)
+        pila = agujas(pila, quito_d)
     else:
         c, pila = cambio_aguja(pila, aguja1, aguja2, aguja3)
 
@@ -115,11 +116,19 @@ c, pila = comprobar(aguja2, quito_d)
 print(c)
 organizar(c, pila, quito_d)
 
-while aguja1.tamaño() != aguja3.tamaño():
-    if aguja1.pila_vacia() is not None:
+'''
+PROBLEMA QUITA SIEMPRE DE LA AGUJA 1 Y SOLO AÑADE EN LA 2 Y LA 3 UNA. 
+NS CÓMO HACER EL BUCLE
+
+'''
+while aguja3.tamaño() != 74:
+    if aguja1.pila_vacia() is not None: #Mirar esta condicion 
         quito_d = quitar_agujas(aguja1)
         c, pila = cambio_aguja(pila, aguja1, aguja2, aguja3)
         print(c)
+        print('Tamaño aguja 1 ' + str(aguja1.tamaño()) + '\n')
+        print('Tamaño aguja 2 ' + str(aguja2.tamaño())+ '\n')
+        print('Tamaño aguja 3 ' + str(aguja3.tamaño())+ '\n')
         organizar(c, pila, quito_d)
     else:
         quito_d = quitar_agujas(aguja2)
