@@ -10,21 +10,21 @@ matriz = [[1, 2, 3],
 def comprobacion(i, j, h):
     if i >= 3:
         i = 0
-        return i
+        
     if j >= 3:
         j = 0
-        return j
-    if  h>= 3:
+        
+    if  h >= 3:
         h = 0
-        return h
-    
+        
+    return i, j, h
 def parametros(i, j, h):
     
-    i = comprobacion(i, j, h)
+    i, j, h = comprobacion(i, j, h)
     j = i+1
-    j = comprobacion(i, j, h)   
+    i, j, h = comprobacion(i, j, h)   
     h = j +1
-    h = comprobacion(i, j, h)
+    i, j, h = comprobacion(i, j, h)
     
     return i, j, h
 
@@ -51,7 +51,7 @@ while contador != 6:
         suma = suma + uno
     else:
         i, j, h = parametros(h, j, i)
-        dos, i = det_iterativa(matriz, 2, 1, 0)
+        dos, i = det_iterativa(matriz, i, j, h)
         resta = resta + 1
     contador = contador + 1
     i = i + 1
