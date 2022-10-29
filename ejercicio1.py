@@ -76,8 +76,15 @@ for i in range(1, 75):
     aguja1.apilar(i)
     print(aguja1.en_cima())
 
-quito = aguja1.desapilar()
-aguja2.apilar(quito)
+
 #ns = Pila.barrido(aguja1)
-def comprobar(dato):
-    
+def comprobar(aguja, disco):
+    if disco < aguja.en_cima()  or aguja.en_cima() == None:
+        aguja.apilar(disco)
+        return True
+    else:
+        return False
+
+quito_d = aguja1.desapilar()
+c = comprobar(aguja2, quito_d)
+print(c)
