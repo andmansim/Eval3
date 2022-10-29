@@ -9,8 +9,7 @@ matrz = [[1, 2, 3],
 '''
 
 
-def det_iterativa(matriz):
-    i = 0
+def det_iterativa(matriz, i):
     j = i+1
     h = j +1
     if i == 3:
@@ -19,13 +18,15 @@ def det_iterativa(matriz):
         j = 1
     if  h== 3:
         h = 1
-        
-    else:
-        pri = matriz[0][i] * matriz[1][i+1] * matriz[2][i+2]
-    
+    pri = matriz[0][i] * matriz[1][j] * matriz[2][h]
+    print(pri)
     return pri
 
 matriz = [[1, 2, 3], 
           [2, 3, 4], 
           [5, 6, 7]]
-det_iterativa(matriz)
+
+numero = 0
+while numero != 3:
+    uno= det_iterativa(matriz)
+    numero = numero + 1
