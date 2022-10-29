@@ -54,7 +54,7 @@ print(pasajeros1)
 nave = naves(lista, pasajeros1, 'pasajeros', 'nombre')
 print('Naves con mayor número de pasajeros: ' + str(nave))
 tripulacion = ordenar(lista, 'tripulacion')
-naves1 = naves(lista, tripulacion[0], 'tripulacion', 'nombre')
+naves1 = naves(lista, [tripulacion[0]], 'tripulacion', 'nombre')
 print('La nave con mayor tripulación es: ' + str(naves1))
 print('Naves que empiezan por AT')
 for i in nombre:
