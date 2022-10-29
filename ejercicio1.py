@@ -67,14 +67,7 @@ class Pila(object):
             pila.apilar(dato)
             return dato
         
-aguja1 = Pila()
-aguja2 = Pila()
-aguja3 = Pila()
 
-#El disco más pequeño esel 74 y el más grande el 1
-for i in range(1, 75):
-    aguja1.apilar(i)
-print(aguja1.en_cima())
 
 def comprobar(aguja, disco):
     if aguja.en_cima() == None:
@@ -107,14 +100,26 @@ def organizar(c, pila, quito_d):
     else:
         c, pila = cambio_aguja(pila, aguja1, aguja2, aguja3)
 
+
+aguja1 = Pila()
+aguja2 = Pila()
+aguja3 = Pila()
+
+#El disco más pequeño esel 74 y el más grande el 1
+for i in range(1, 75):
+    aguja1.apilar(i)
+print(aguja1.en_cima())
+
 quito_d = quitar_agujas(aguja1)
 c, pila = comprobar(aguja2, quito_d)
 print(c)
+organizar(c, pila, quito_d)
 
 while aguja1.tamaño() != aguja3.tamaño():
     if aguja1.pila_vacia() is not None:
         quito_d = quitar_agujas(aguja1)
         c, pila = cambio_aguja(pila, aguja1, aguja2, aguja3)
+        print(c)
         organizar(c, pila, quito_d)
     else:
         quito_d = quitar_agujas(aguja2)
