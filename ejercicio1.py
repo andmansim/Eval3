@@ -86,9 +86,6 @@ def comprobar(aguja, disco):
     else:
         return False, aguja
 
-quito_d = aguja1.desapilar()
-c, pila = comprobar(aguja2, quito_d)
-print(c)
 def agujas(pila, dato):
     pila.apilar(dato)
     print(pila.en_cima())
@@ -102,7 +99,15 @@ def cambio_aguja(resultado, agu1, agu2, agu3):
         c, pila = comprobar(agu1, quito_d)
     return c, pila
 
+def quitar_agujas(aguja):
+    quito_d = aguja.desapilar()
+    return quito_d
+
+quito_d = quitar_agujas(aguja1)
+c, pila = comprobar(aguja2, quito_d)
+print(c)
+
 if c:
     agujas(pila, quito_d)
 else:
-   r, pilas = cambio_aguja(pila, aguja1, aguja2, aguja3)
+   c, pila = cambio_aguja(pila, aguja1, aguja2, aguja3)
