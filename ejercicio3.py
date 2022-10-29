@@ -41,6 +41,7 @@ def añadir_datos(n, l, p, t):
     dicc['tripulacion'] = float(t)
     return dicc
 
+#
 print("Naves de Star Wars...\n")
 vehiculos = helpers.leer('vehicles.csv')
 helpers.limpiar(vehiculos)
