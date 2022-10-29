@@ -19,11 +19,11 @@ def comprobacion(i, j, h):
         
     return i, j, h
 def parametros(i, j, h):
-    
+    i = i +1
     i, j, h = comprobacion(i, j, h)
-    j = i+1
+    j = j+1
     i, j, h = comprobacion(i, j, h)   
-    h = j +1
+    h = h + 1
     i, j, h = comprobacion(i, j, h)
     
     return i, j, h
@@ -37,9 +37,9 @@ matriz = [[1, 2, 3],
           [2, 3, 4], 
           [5, 6, 7]]
 
-i = 0
+i = 2
 j = 0
-h = 0
+h = 1
 suma = 0
 resta = 0
 contador = 0
@@ -50,11 +50,12 @@ while contador != 6:
         uno, i = det_iterativa(matriz, i, j, h)
         suma = suma + uno
     else:
-        i, j, h = parametros(h, j, i)
+        print(i, j, h)
+        h, j, i = parametros(i, j, h)
+        print(i, j, h)
         dos, i = det_iterativa(matriz, i, j, h)
-        resta = resta + 1
+        resta = resta + dos
     contador = contador + 1
-    i = i + 1
-
+    
 
 print(suma, resta)
