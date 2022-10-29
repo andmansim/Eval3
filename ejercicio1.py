@@ -44,6 +44,7 @@ class Pila(object):
             return pila.cima.info
         else:
             return None
+        
     def tamaño(pila):
         #Devuelve el numero de elementos en la pila
         return pila.tamaño
@@ -65,13 +66,18 @@ class Pila(object):
             print(dato)
             pila.apilar(dato)
             return dato
+        
 aguja1 = Pila()
 aguja2 = Pila()
 aguja3 = Pila()
 
+#El disco más pequeño esel 74 y el más grande el 1
 for i in range(1, 75):
     aguja1.apilar(i)
-    print(i)
-    print(aguja1.cima)
+    print(aguja1.en_cima())
 
+quito = aguja1.desapilar()
+aguja2.apilar(quito)
 #ns = Pila.barrido(aguja1)
+def comprobar(dato):
+    
