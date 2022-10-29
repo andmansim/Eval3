@@ -31,9 +31,17 @@ matriz = [[1, 2, 3],
 numero = 0
 suma = 0
 resta = 0
-while numero != 6:
-    uno, numero = det_iterativa(matriz, numero)
+contador = 0
+while contador != 6:
+    
+    if contador < 3:
+        uno, numero = det_iterativa(matriz, numero)
+        suma = suma + uno
+    else:
+        dos, numero = det_iterativa(matriz, numero)
+        resta = resta + 1
+    contador = contador + 1
     numero = numero + 1
 
-suma = suma + uno
-print(suma)
+
+print(suma, resta)
