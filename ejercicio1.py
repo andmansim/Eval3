@@ -74,13 +74,14 @@ aguja3 = Pila()
 #El disco más pequeño esel 74 y el más grande el 1
 for i in range(1, 75):
     aguja1.apilar(i)
-    print(aguja1.en_cima())
+print(aguja1.en_cima())
 
 
 #ns = Pila.barrido(aguja1)
 def comprobar(aguja, disco):
-    if disco < aguja.en_cima()  or aguja.en_cima() == None:
-        aguja.apilar(disco)
+    if aguja.en_cima() == None:
+        return True
+    elif disco < aguja.en_cima():
         return True
     else:
         return False
@@ -88,3 +89,8 @@ def comprobar(aguja, disco):
 quito_d = aguja1.desapilar()
 c = comprobar(aguja2, quito_d)
 print(c)
+def agujas(pila, dato):
+    pila.apilar(dato)
+    
+if c :
+    agujas(aguja2, quito_d)
