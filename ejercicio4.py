@@ -82,7 +82,7 @@ class Polinomio(object):
                 pol2 = pol2.sig
             pol1 = pol1.sig
         return paux
-
+    #VER QUE HAY QUE MODIFICAR PARA QUE SE DIVIDAN
     def dividir(polinomio1, polinomio2):
         paux = Polinomio()
         pol1 = polinomio1.termino_mayor
