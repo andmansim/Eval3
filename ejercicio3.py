@@ -26,6 +26,7 @@ def naves(lista, lista2, nombre, nombre1):
     naves = []
     for i in lista:
         if i[nombre] in lista2:
+            print(i[nombre])
             naves.append(i[nombre1])
     print(naves)
     return naves
@@ -49,9 +50,10 @@ print(nombre)
 print('Lista ordenada de largo')
 print(largo)
 pasajeros = ordenar(lista, 'pasajeros')
-print(pasajeros)
-nave = naves(lista, pasajeros, 'pasajeros', 'nombre')
-print('Naves con mayor número de pasajeros:')
+pasajeros1 = pasajeros[0:5]
+print(pasajeros1)
+nave = naves(lista, pasajeros1, 'pasajeros', 'nombre')
+print('Naves con mayor número de pasajeros: ' + str(nave))
 print(naves[0], naves[1], naves[2], naves[3], naves[4])
 tripulacion = ordenar(lista, 'tripulacion')
 naves1 = naves(lista, tripulacion, 'tripulacion', 'nombre')
