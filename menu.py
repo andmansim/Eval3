@@ -14,7 +14,7 @@ def iniciar():
         print(" BIENVENIDO AL Manager ")
         print("========================")
         print("[1] Torres de Hanoi")
-        print("[2] ")
+        print("[2] Determinante 3x3")
         print("[3] Naves Star Wars ")
         print("[4]  ")
         print("[5]  ")
@@ -38,7 +38,7 @@ def iniciar():
             e1.cambiar_disco(aguja1.tamaño(), aguja1, aguja3, aguja2)
                             
         if opcion == '2':
-            print("...\n")
+            print("Determinante 3x3...\n")
             
         
         if opcion == '3':
