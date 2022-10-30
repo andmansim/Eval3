@@ -1,25 +1,32 @@
 def comprobacion(i, j, h):
     if i >= 3:
         i = 0
-        
-    if j >= 3:
+    elif j >= 3:
         j = 0
-        
-    if  h >= 3:
+    elif  h >= 3:
         h = 0
-    print(i, j, h)   
+    
+    if i == -1:
+        i = 2
+    elif j == -1:
+        j = 2
+    elif h == -1:
+        h =2
+        
     return i, j, h
 
-def parametros(i, j, h):
-    i = i +1
-    print(i, j, h)
-    i, j, h = comprobacion(i, j, h)
-    j = j+1
-    print(i, j, h)
-    i, j, h = comprobacion(i, j, h)   
-    h = h + 1
-    print(i, j, h)
-    i, j, h = comprobacion(i, j, h)
+def parametros(i, j, h, contador):
+    if contador < 3:
+        i = i +1
+        j = j + 1
+        h = h + 1
+        i, j, h = comprobacion(i, j, h)
+    else:
+        i = i-1
+        j = j-1
+        h = h-1
+        i, j, h = comprobacion(i, j, h) 
+    
     return i, j, h
 
 def det_iterativa(matriz, i, j, h):
@@ -31,18 +38,19 @@ matriz = [[1, 2, 3],
           [2, 3, 4], 
           [5, 6, 7]]
 
-i = 2
-j = 0
-h = 1
+i = 0
+j = 1
+h = 2
 suma = 0
 resta = 0
 contador = 0
 while contador != 6:
     
     if contador < 3:
-        i, j, h = parametros(i, j, h)
+        
         uno, i = det_iterativa(matriz, i, j, h)
         suma = suma + uno
+        i, j, h = parametros(i, j, h)
     else:
         print(i, j, h)
         h, j, i = parametros(i, j, h)
