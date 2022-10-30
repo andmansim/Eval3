@@ -1,12 +1,3 @@
-'''
-En el momento de la creación del mundo, los sacerdotes del templo de Brahma recibieron una plataforma 
-de bronce sobre la cual había tres agujas de diamante. En la primera aguja estaban apilados setenta y 
-cuatro discos de oro, cada una ligeramente menor que la que estaba debajo. A los sacerdotes se les encomendó 
-la tarea de pasarlos todos desde la primera aguja a la tercera, con dos condiciones, solo puede moverse un disco 
-a la vez, y ningún disco podrá ponerse encima de otro más pequeño. Se dijo a los sacerdotes que, cuando hubieran 
-terminado de mover los discos, llegaría el fin del mundo. 
-Resolver este problema de la Torre de Hanói.
-'''
 
 #funciones para las pilas.
 class NodoPila:
@@ -69,11 +60,11 @@ class Pila(object):
         
 
 
-def comprobar(aguja, disco):
+'''def comprobar(aguja, disco):
     if aguja.en_cima() == None:
-        return True, aguja
+        return True
     elif disco > aguja.en_cima():
-        return True, aguja
+        return True
     else:
         return False, aguja
 
@@ -91,9 +82,6 @@ def cambio_aguja(resultado, agu1, agu2, agu3):
         c, pila = comprobar(agu1, quito_d)
     return c, pila
 
-def quitar_agujas(aguja):
-    quito_d = aguja.desapilar()
-    return quito_d
 
 def organizar(c, pila, quito_d):
     if c:
@@ -101,7 +89,7 @@ def organizar(c, pila, quito_d):
     else:
         c, pila = cambio_aguja(pila, aguja1, aguja2, aguja3)
 
-
+'''
 aguja1 = Pila()
 aguja2 = Pila()
 aguja3 = Pila()
@@ -111,16 +99,23 @@ for i in range(1, 75):
     aguja1.apilar(i)
 print(aguja1.en_cima())
 
-quito_d = quitar_agujas(aguja1)
+def quitar_agujas(aguja):
+    quito_d = aguja.desapilar()
+    print('Quito ' + str(quito_d) + ' de ' + str(aguja))
+    return quito_d
+
+
+while aguja3.tamaño() != 74:
+    quito = quitar_agujas(aguja1)
+    
+
+
+
+'''quito_d = quitar_agujas(aguja1)
 c, pila = comprobar(aguja2, quito_d)
 print(c)
 organizar(c, pila, quito_d)
 
-'''
-PROBLEMA QUITA SIEMPRE DE LA AGUJA 1 Y SOLO AÑADE EN LA 2 Y LA 3 UNA. 
-NS CÓMO HACER EL BUCLE
-
-'''
 while aguja3.tamaño() != 74:
     #if aguja1.pila_vacia() is not None: #Mirar esta condicion 
         quito_d = quitar_agujas(aguja1)
@@ -131,5 +126,5 @@ while aguja3.tamaño() != 74:
         print('Tamaño aguja 3 ' + str(aguja3.tamaño())+ '\n')
         organizar(c, pila, quito_d)
     #else:
-        #quito_d = quitar_agujas(aguja2)
-
+        quito_d = quitar_agujas(aguja2)
+'''
