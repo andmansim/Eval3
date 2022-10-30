@@ -57,4 +57,4 @@ while contador != 6:
         i, j, h = parametros(h, j, i, contador)
     contador = contador + 1
     
-total = suma + resta
+total = suma - resta
