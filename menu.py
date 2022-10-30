@@ -54,17 +54,17 @@ def iniciar():
     
                 if contador < 3:
         
-                    uno = det_iterativa(matriz, i, j, h)
+                    uno = e2.det_iterativa(matriz, i, j, h)
                     suma = suma + uno
-                    i, j, h = parametros(i, j, h, contador)
+                    i, j, h = e2.parametros(i, j, h, contador)
         
                 else:
                     if contador == 3:
                         h, j, i = i, j, h
             
-                    dos = det_iterativa(matriz, i, j, h)
+                    dos = e2.det_iterativa(matriz, i, j, h)
                     resta = resta + dos
-                    i, j, h = parametros(i, j, h, contador)
+                    i, j, h = e2.parametros(i, j, h, contador)
                 contador = contador + 1
     
             total = suma - resta
