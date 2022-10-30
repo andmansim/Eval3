@@ -41,37 +41,6 @@ class Pila(object):
         return pila.tamanio
 
 
-
-'''def comprobar(aguja, disco):
-    if aguja.en_cima() == None:
-        return True
-    elif disco > aguja.en_cima():
-        return True
-    else:
-        return False, aguja
-
-def agujas(pila, dato):
-    pila.apilar(dato)
-    print(pila.en_cima())
-    return pila
-
-def cambio_aguja(resultado, agu1, agu2, agu3):
-    if resultado == agu1:
-        c, pila = comprobar(agu2, quito_d)
-    elif resultado == agu2:
-        c, pila = comprobar(agu3, quito_d)
-    else:
-        c, pila = comprobar(agu1, quito_d)
-    return c, pila
-
-
-def organizar(c, pila, quito_d):
-    if c:
-        pila = agujas(pila, quito_d)
-    else:
-        c, pila = cambio_aguja(pila, aguja1, aguja2, aguja3)
-
-'''
 aguja1 = Pila()
 aguja2 = Pila()
 aguja3 = Pila()
@@ -79,7 +48,7 @@ aguja3 = Pila()
 #El disco más pequeño esel 74 y el más grande el 1
 for i in range(1, 75):
     aguja1.apilar(i)
-print(aguja1.en_cima())
+
 
 
 def cambiar_disco(t, agu1, agu3, agu2):
@@ -94,3 +63,6 @@ def cambiar_disco(t, agu1, agu3, agu2):
 
 cambiar_disco(aguja1.tamaño(), aguja1, aguja3, aguja2)
 
+print(aguja1.tamaño())
+print(aguja2.tamaño())
+print(aguja3.tamaño())
