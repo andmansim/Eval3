@@ -55,3 +55,31 @@ def iterar(i,j,h, resta, suma, contador, matriz):
 
     total = suma - resta
     return total
+
+
+
+ 
+def det_suma(matriz,i,j,h):
+    t_suma = 0
+    if j>2: j=0
+    if h>2: h=0
+    if i < 3:
+        t_suma = matriz[0][i] * matriz[1][j] * matriz[2][h] + det_suma(matriz,i+1,j+1,h+1)
+    return t_suma
+
+def det_resta(matriz,i2,j2,h2):
+    t_resta = 0
+    if h2 <0: h2 = 2
+    if j2 <0: j2 = 2
+    if i2 >= 0:
+        t_resta = matriz[0][i2] * matriz[1][j2] * matriz[2][h2] + det_resta(matriz,i2-1,j2-1,h2-1)
+    return t_resta
+
+def det_recursiva(matriz, i, j, h):
+    s = det_suma(matriz,i,j,h) 
+    r = det_resta(matriz,i+2,j,h-2)
+    return s - r
+    
+
+total = det_recursiva(matriz, 0, 1, 2)
+print('El determinante por recursividad da ' + str(total))
