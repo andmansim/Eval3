@@ -1,1 +1,0 @@
-lista = [{'pa': 'adr', 'tripulacion'}]
