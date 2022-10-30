@@ -111,25 +111,9 @@ class Polinomio(object):
         aux2 = polinomio.termino_mayor
         for i in range(0, 1):
             
-            if aux.info.termino != termino:
+            if aux2.info.termino != termino:
                 aux.agregar_termino(aux2.info.termino, aux2.info.valor)
                 aux2 = aux2.sig
                 
         return aux
        
-p = Polinomio()
-p1 = Polinomio()
-p.agregar_termino(4,3) #grado, número
-p1.agregar_termino(4,5)
-print(p.mostrar())
-print(p1.mostrar())
-
-resta = p1.restar(p)
-print(resta.mostrar())
-
-div = p1.dividir(p)
-print(div.mostrar())
-
-#MIRAR PQ NO VA
-p = p.eliminar_termino(4)
-print(p.mostrar())

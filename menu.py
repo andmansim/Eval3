@@ -101,8 +101,22 @@ def iniciar():
         
         if opcion == '4':
             print("Polinomio...\n")
-            pol = e4.Polinomio()
-           
+            p = e4.Polinomio()
+            p1 = e4.Polinomio()
+            p.agregar_termino(4,3) #grado, número
+            p1.agregar_termino(4,5)
+            print('Polinomio 1 ' + str(p.mostrar()))
+            print('Polinomio 2 ' + str(p1.mostrar()))
+
+            resta = p1.restar(p)
+            print('Resta de polinomios ' + str(resta.mostrar()))
+
+            div = p1.dividir(p)
+            print('División de polinomios ' + str(div.mostrar()))
+
+            p = p.eliminar_termino(4)
+            print('Eliminar un término del polinomio 1 ' + str(p.mostrar()))
+                    
                 
         if opcion == '5':
             print("...\n")
