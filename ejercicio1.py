@@ -126,6 +126,11 @@ while aguja3.tamaño() != 74:
     a = agujas(aguja3, quito)
     if a == False:
         a = agujas(aguja2, quito)
+        if a == False:
+            if aguja2.en_cima() > aguja3.en_cima():
+                quito = quitar_agujas(aguja2)
+                a = agujas(aguja1, quito)
+                
     
 
 
