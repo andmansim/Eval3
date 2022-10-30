@@ -1,5 +1,4 @@
-
-
+#Iterativa
 def comprobacion(i, j, h):
     if i >= 3:
         i = 0
@@ -58,7 +57,7 @@ def iterar(i,j,h, resta, suma, contador, matriz):
 
 
 
- 
+#Recursiva
 def det_suma(matriz,i,j,h):
     t_suma = 0
     if j>2: j=0
@@ -80,6 +79,3 @@ def det_recursiva(matriz, i, j, h):
     r = det_resta(matriz,i+2,j,h-2)
     return s - r
     
-
-total = det_recursiva(matriz, 0, 1, 2)
-print('El determinante por recursividad da ' + str(total))

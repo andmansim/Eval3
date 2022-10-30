@@ -46,9 +46,9 @@ def iniciar():
             #FORMA ITERATIVA
             total = e2.iterar(0, 1, 2, 0, 0, 0, matriz)
             print('El determinante por iteración da ' + str(total))
-            
-            total = e2.det_recursiva(matriz, 0, 1, 2)
-            print('El determinante por recursividad da ' + str(total))
+            #Recusiva
+            total1 = e2.det_recursiva(matriz, 0, 1, 2)
+            print('El determinante por recursividad da ' + str(total1))
         
         if opcion == '3':
             print("Naves de Star Wars...\n")
