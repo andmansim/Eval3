@@ -1,12 +1,3 @@
-'''
-Realiza el código para calcular el determinante de una matriz cuadrada de [3 x 3], 
-regla de Sarrus de forma recursiva y de forma iterativa.
-'''
-'''
-matriz = [[1, 2, 3], 
-          [2, 3, 4], 
-          [5, 6, 7]]
-'''
 def comprobacion(i, j, h):
     if i >= 3:
         i = 0
@@ -18,6 +9,7 @@ def comprobacion(i, j, h):
         h = 0
     print(i, j, h)   
     return i, j, h
+
 def parametros(i, j, h):
     i = i +1
     print(i, j, h)
@@ -28,7 +20,6 @@ def parametros(i, j, h):
     h = h + 1
     print(i, j, h)
     i, j, h = comprobacion(i, j, h)
-    
     return i, j, h
 
 def det_iterativa(matriz, i, j, h):
@@ -55,7 +46,7 @@ while contador != 6:
     else:
         print(i, j, h)
         h, j, i = parametros(i, j, h)
-        print(i, j, h) # NS PQ EL DOS NO ME VA. #AYDUA
+        print(i, j, h)
         dos, i = det_iterativa(matriz, i, j, h)
         resta = resta + dos
     contador = contador + 1

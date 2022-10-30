@@ -1,6 +1,9 @@
 import helpers
 import ejercicio3 as e3
 import ejercicio4 as e4
+import ejercicio2 as e2
+import ejercicio1 as e1
+import ejercicio5 as e5
 
 
 def iniciar():
@@ -10,7 +13,7 @@ def iniciar():
         print("========================")
         print(" BIENVENIDO AL Manager ")
         print("========================")
-        print("[1] ")
+        print("[1] Torres de Hanoi")
         print("[2] ")
         print("[3] Naves Star Wars ")
         print("[4]  ")
@@ -22,8 +25,17 @@ def iniciar():
         helpers.limpiar_pantalla()
 
         if opcion == '1':
-            print("...\n")
-            
+            print("Torres de Hanoi...\n")
+            aguja1 = e1.Pila()
+            aguja2 = e1.Pila()
+            aguja3 = e1.Pila()
+
+            #El disco más pequeño esel 74 y el más grande el 1
+            for i in range(1, 75):
+                aguja1.apilar(i)
+
+
+            e1.cambiar_disco(aguja1.tamaño(), aguja1, aguja3, aguja2)
                             
         if opcion == '2':
             print("...\n")
