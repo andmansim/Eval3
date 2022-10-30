@@ -39,6 +39,33 @@ def iniciar():
                             
         if opcion == '2':
             print("Determinante 3x3...\n")
+            print('Forma iterativa')
+            matriz = [[1, 2, 3], 
+                      [2, 3, 4], 
+                      [5, 6, 7]]
+            #FORMA ITERATIVA
+            i = 0
+            j = 1
+            h = 2
+            suma = 0
+            resta = 0
+            contador = 0
+            while contador != 6:
+                
+                if contador < 3:
+                    
+                    uno = e2.det_iterativa(matriz, i, j, h)
+                    suma = suma + uno
+                    i, j, h = e2.parametros(i, j, h, contador)
+                else:
+
+                    dos = e2.det_iterativa(matriz, h, j, i)
+                    resta = resta + dos
+                    i, j, h = e2.parametros(h, j, i, contador)
+                contador = contador + 1
+                
+            total = suma - resta
+            print('El determinante da ' + str(total))
             
         
         if opcion == '3':

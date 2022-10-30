@@ -17,7 +17,7 @@ def comprobacion(i, j, h):
 
 def parametros(i, j, h, contador):
     if contador < 3:
-        i = i +1
+        i = i + 1
         j = j + 1
         h = h + 1
         i, j, h = comprobacion(i, j, h)
