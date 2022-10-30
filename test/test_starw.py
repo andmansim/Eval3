@@ -28,6 +28,8 @@ class TestDatabase(unittest.TestCase):
         self.assertEqual(lista[-1], {'nombre': 'Estrella de la Muerte', 'largo': 80000.0, 'pasajeros': 1200000.0, 'tripulacion': 825984.0})
         self.assertEqual(lista[-2], {'nombre': 'Halcón Milenario', 'largo': 34.37, 'pasajeros': 4.0, 'tripulacion': 4.0})
         
-    
+    def test_naves(self):
+        self.assertEqual(sacar_info(lista, largo[-1], 'largo'), {'nombre': 'Emergency Firespeeder', 'largo': 0.0, 'pasajeros': 0.0, 'tripulacion': 2.0})
+        self.assertEqual(sacar_info(lista, largo[0], 'largo'), {'nombre': 'Estrella de la Muerte', 'largo': 80000.0, 'pasajeros': 1200000.0, 'tripulacion': 825984.0})
 if __name__ == '__main__':
     unittest.main()

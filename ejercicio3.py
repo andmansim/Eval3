@@ -41,7 +41,7 @@ def añadir_datos(n, l, p, t):
     dicc['tripulacion'] = float(t)
     return dicc
 
-#FALTA LOS UNITTEST Y PONERLO EN EL MENU
+
 print("Naves de Star Wars...\n")
 vehiculos = helpers.leer('vehicles.csv')
 helpers.limpiar(vehiculos)
@@ -57,16 +57,16 @@ print('Lista ordenada de nombres ' + str(nombre) + '\n')
 print('Lista ordenada de largo ' + str(largo) + '\n')
 
 
-print(lista[-1]) #{'nombre': 'Estrella de la Muerte', 'largo': 80000.0, 'pasajeros': 1200000.0, 'tripulacion': 825984.0}
-print(lista[-2]) #{'nombre': 'Halcón Milenario', 'largo': 34.37, 'pasajeros': 4.0, 'tripulacion': 4.0}
+print(lista[-1]) 
+print(lista[-2]) 
 
 pasajeros = ordenar(lista, 'pasajeros')
 pasajeros1 = pasajeros[0:5]
 nave = naves(lista, pasajeros1, 'pasajeros', 'nombre')
-print('Naves con mayor número de pasajeros: ' + str(nave) + '\n') #['Sail barge', 'Multi-Troop Transport', 'C-9979 landing craft', 'Clone turbo tank', 'Estrella de la Muerte']
+print('Naves con mayor número de pasajeros: ' + str(nave) + '\n') 
 tripulacion = ordenar(lista, 'tripulacion')
 naves1 = naves(lista, [tripulacion[0]], 'tripulacion', 'nombre')
-print('La nave con mayor tripulación es: ' + str(naves1) + '\n') #['Estrella de la Muerte']
+print('La nave con mayor tripulación es: ' + str(naves1) + '\n') 
 print('Naves que empiezan por AT')
 for i in nombre:
     if i.startswith('AT'):
@@ -81,7 +81,7 @@ naves2 = naves(lista, pa, 'pasajeros', 'nombre')
 print('Naves que pueden llevar 6 o más pasajeros: ' + str(naves2) + '\n')
 
 nave_p = sacar_info(lista, largo[-1], 'largo')
-print('Nave más pequeña: '+ str(nave_p)  + '\n') # {'nombre': 'Emergency Firespeeder', 'largo': 0.0, 'pasajeros': 0.0, 'tripulacion': 2.0}
+print('Nave más pequeña: '+ str(nave_p)  + '\n') 
 
 nave_g =sacar_info(lista, largo[0], 'largo')
-print('La nave más grande: ' + str(nave_g)  + '\n') #{'nombre': 'Estrella de la Muerte', 'largo': 80000.0, 'pasajeros': 1200000.0, 'tripulacion': 825984.0}
+print('La nave más grande: ' + str(nave_g)  + '\n') 
