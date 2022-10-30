@@ -33,29 +33,3 @@ def det_iterativa(matriz, i, j, h):
     pri = matriz[0][i] * matriz[1][j] * matriz[2][h]
     return pri
 
-matriz = [[1, 2, 3], 
-          [2, 3, 4], 
-          [5, 6, 7]]
-#FORMA ITERATIVA
-i = 0
-j = 1
-h = 2
-suma = 0
-resta = 0
-contador = 0
-while contador != 6:
-    
-    if contador < 3:
-        
-        uno = det_iterativa(matriz, i, j, h)
-        suma = suma + uno
-        i, j, h = parametros(i, j, h, contador)
-    else:
-
-        dos = det_iterativa(matriz, h, j, i)
-        resta = resta + dos
-        i, j, h = parametros(h, j, i, contador)
-    contador = contador + 1
-    
-total = suma - resta
-print(total)
