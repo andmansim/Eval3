@@ -104,9 +104,14 @@ def quitar_agujas(aguja):
     print('Quito ' + str(quito_d) + ' de ' + str(aguja))
     return quito_d
 
+def agujas(pila, dato):
+    pila.apilar(dato)
+    print('Añado ' + str(dato) + ' a ' +  str(pila))
+
 
 while aguja3.tamaño() != 74:
     quito = quitar_agujas(aguja1)
+    agujas(aguja3, quito)
     
 
 
