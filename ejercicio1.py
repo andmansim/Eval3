@@ -122,7 +122,7 @@ NS CÓMO HACER EL BUCLE
 
 '''
 while aguja3.tamaño() != 74:
-    if aguja1.pila_vacia() is not None: #Mirar esta condicion 
+    #if aguja1.pila_vacia() is not None: #Mirar esta condicion 
         quito_d = quitar_agujas(aguja1)
         c, pila = cambio_aguja(pila, aguja1, aguja2, aguja3)
         print(c)
@@ -130,6 +130,6 @@ while aguja3.tamaño() != 74:
         print('Tamaño aguja 2 ' + str(aguja2.tamaño())+ '\n')
         print('Tamaño aguja 3 ' + str(aguja3.tamaño())+ '\n')
         organizar(c, pila, quito_d)
-    else:
-        quito_d = quitar_agujas(aguja2)
+    #else:
+        #quito_d = quitar_agujas(aguja2)
 
