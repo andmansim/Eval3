@@ -107,10 +107,24 @@ class Polinomio(object):
         return paux
     
     def eliminar_termino(polinomio, termino, valor):
-        a =  Polinomio.obtener_valor(polinomio, termino)
-        polinomio.modificar_termino(termino, valor)
-    
-        return polinomio
+        aux = Polinomio()
+        
+        if termino != polinomio.info.termino and valor !=polinomio.info.valor:
+            aux.agregar_termino()
+        aux.agregar_termino()
+        dato = datoPolinomio(valor, termino)
+        aux.info = dato
+        if termino > polinomio.grado:
+            aux.sig = polinomio.termino_mayor
+            polinomio.termino_mayor = aux
+            polinomio.grado = termino
+        else:
+            actual = polinomio.termino_mayor
+            
+            while actual.sig is not None and termino < actual.sig.info.termino:
+                actual = actual.sig
+            aux.sig = actual.sig
+            actual.sig = aux
        
 p = Polinomio()
 p1 = Polinomio()
@@ -126,5 +140,5 @@ div = p1.dividir(p)
 print(div.mostrar())
 
 #MIRAR PQ NO VA
-p = Polinomio.eliminar_termino(p, 4, 3)
+p = Polinomio.modificar_termino(p, 8, 1)
 print(p.mostrar())
