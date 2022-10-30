@@ -104,10 +104,22 @@ def quitar_agujas(aguja):
     print('Quito ' + str(quito_d) + ' de ' + str(aguja))
     return quito_d
 
-def agujas(pila, dato):
-    pila.apilar(dato)
-    print('Añado ' + str(dato) + ' a ' +  str(pila))
+def agujas(aguja, disco):
+    c, pila = comprobar(aguja, disco)
+    if c :
+        pila.apilar(disco)
+        print('Añado ' + str(disco) + ' a ' +  str(pila))
+        return True
+    else:
+        return False
 
+def comprobar(aguja, disco):
+    if aguja.en_cima() == None:
+        return True, aguja
+    elif disco > aguja.en_cima():
+        return True, aguja
+    else:
+        return False, aguja
 
 while aguja3.tamaño() != 74:
     quito = quitar_agujas(aguja1)
