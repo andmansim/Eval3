@@ -106,10 +106,11 @@ class Polinomio(object):
             pol1 = pol1.sig
         return paux
     
-    def eliminar_termino(polinomio, termino):
-       a =  Polinomio.obtener_valor(polinomio, termino)
-       del a
-       return polinomio
+    def eliminar_termino(polinomio, termino, valor):
+        a =  Polinomio.obtener_valor(polinomio, termino)
+        polinomio.modificar_termino(termino, valor)
+    
+        return polinomio
        
 p = Polinomio()
 p1 = Polinomio()
@@ -125,5 +126,5 @@ div = p1.dividir(p)
 print(div.mostrar())
 
 #MIRAR PQ NO VA
-p = Polinomio.eliminar_termino(p, 3)
+p = Polinomio.eliminar_termino(p, 4, 3)
 print(p.mostrar())
