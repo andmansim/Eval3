@@ -105,12 +105,12 @@ def quitar_agujas(aguja):
     return quito_d
 
 def agujas(aguja, disco):
-    c, pila = comprobar(aguja, disco)
-    if c :
+    c, pila = comprobar(aguja, disco) #Comprueba si puedo añadir ese elemento a la aguja
+    if c :#Si puedo, entonces lo añade y nos devuelve True
         pila.apilar(disco)
         print('Añado ' + str(disco) + ' a ' +  str(pila))
         return True
-    else:
+    else:#no puedo pues nos devuelve False
         return False
 
 def comprobar(aguja, disco):
@@ -123,7 +123,9 @@ def comprobar(aguja, disco):
 
 while aguja3.tamaño() != 74:
     quito = quitar_agujas(aguja1)
-    agujas(aguja3, quito)
+    a = agujas(aguja3, quito)
+    if a == False:
+        a = agujas(aguja2, quito)
     
 
 
