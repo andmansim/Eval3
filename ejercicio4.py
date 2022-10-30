@@ -124,4 +124,4 @@ print(resta.mostrar())
 div = p1.dividir(p)
 print(div.mostrar())
 
-eliminar_termino(p, 4)
+Polinomio.eliminar_termino(p, 4)
