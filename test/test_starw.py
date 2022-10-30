@@ -13,6 +13,7 @@ lista.append(estrella)
 nombre = ordenar(lista, 'nombre')
 largo = ordenar(lista, 'largo')
 tripulacion = ordenar(lista, 'tripulacion')
+pasajeros = ordenar(lista, 'pasajeros')
 pasajeros1 = pasajeros[0:5]
 
 class TestDatabase(unittest.TestCase):
