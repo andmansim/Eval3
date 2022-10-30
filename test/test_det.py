@@ -12,25 +12,27 @@ h = 2
 suma = 0
 resta = 0
 contador = 0
-while contador != 6:
+def iterar(i,j,h, resta, suma, contador):
+    while contador != 6:
 
-    if contador < 3:
+        if contador < 3:
 
-        uno = det_iterativa(matriz, i, j, h)
-        suma = suma + uno
-        i, j, h = parametros(i, j, h, contador)
+            uno = det_iterativa(matriz, i, j, h)
+            suma = suma + uno
+            i, j, h = parametros(i, j, h, contador)
 
-    else:
-        if contador == 3:
-            h, j, i = i, j, h
+        else:
+            if contador == 3:
+                h, j, i = i, j, h
 
-        dos = det_iterativa(matriz, i, j, h)
-        resta = resta + dos
-        i, j, h = parametros(i, j, h, contador)
-    contador = contador + 1
+            dos = det_iterativa(matriz, i, j, h)
+            resta = resta + dos
+            i, j, h = parametros(i, j, h, contador)
+        contador = contador + 1
 
-total = suma - resta
+    total = suma - resta
+    return total
 
 class TestDatabase(unittest.TestCase):
     def test_total(self):
-        self.assertAlmostEqual(total, 0)
+        self.assertAlmostEqual(iterar(0, 1, 2, 0, 0), 0)
