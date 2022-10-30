@@ -46,39 +46,45 @@ def iniciar():
             vehiculos = helpers.leer('vehicles.csv')
             helpers.limpiar(vehiculos)
             lista = e3.filtrar(vehiculos)
+            halcon = e3.añadir_datos('Halcón Milenario', 34.37, 4,4)
+            estrella = e3.añadir_datos('Estrella de la Muerte', 80000, 1200000 , 825984)
+            lista.append(halcon)
+            lista.append(estrella)
             nombre = e3.ordenar(lista, 'nombre')
             largo = e3.ordenar(lista, 'largo')
-            
-            print('Lista ordenada de nombres')
-            print(nombre)
-            print('Lista ordenada de largo')
-            print(largo)
+
+            print('Lista ordenada de nombres ' + str(nombre) + '\n')
+            print('Lista ordenada de largo ' + str(largo) + '\n')
+
+
+            print(lista[-1]) 
+            print(lista[-2]) 
+
             pasajeros = e3.ordenar(lista, 'pasajeros')
-            naves = e3.naves(lista, pasajeros, 'pasajeros', 'nombre')
-            print('Naves con mayor número de pasajeros:')
-            print(naves[0], naves[1], naves[2], naves[3], naves[4])
+            pasajeros1 = pasajeros[0:5]
+            nave = e3.naves(lista, pasajeros1, 'pasajeros', 'nombre')
+            print('Naves con mayor número de pasajeros: ' + str(nave) + '\n') 
             tripulacion = e3.ordenar(lista, 'tripulacion')
-            naves1 = e3.naves(lista, tripulacion, 'tripulacion', 'nombre')
-            print('La nave con mayot tripulación es:')
-            print(naves1[0])
+            naves1 = e3.naves(lista, [tripulacion[0]], 'tripulacion', 'nombre')
+            print('La nave con mayor tripulación es: ' + str(naves1) + '\n') 
             print('Naves que empiezan por AT')
             for i in nombre:
                 if i.startswith('AT'):
                     print(i)
-            print('Naves que pueden llevar 6 o más pasajeros:')
+
             pa = []
             for i in pasajeros:
-                if i >= '6':
+                if i >= 6.0:
                     pa.append(i)
-            
+
             naves2 = e3.naves(lista, pa, 'pasajeros', 'nombre')
-            print(naves2)
-            print('Nave más pequeña:')
+            print('Naves que pueden llevar 6 o más pasajeros: ' + str(naves2) + '\n')
+
             nave_p = e3.sacar_info(lista, largo[-1], 'largo')
-            print(nave_p)
-            print('La nave más grande:')
-            nave_g =e3.sacar_info(lista, largo[0], 'largo')
-            print(nave_g)
+            print('Nave más pequeña: '+ str(nave_p)  + '\n') 
+
+            nave_g = e3.sacar_info(lista, largo[0], 'largo')
+            print('La nave más grande: ' + str(nave_g)  + '\n') 
             
             
             
