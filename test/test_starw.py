@@ -8,3 +8,8 @@ class TestDatabase(unittest.TestCase):
         n_p = e3.ordenar()
         e3.naves(lista, pasajeros, 'pasajeros', 'nombre')
         self.assertEqual(n_)
+        
+        
+
+if __name__ == '__main__':
+    unittest.main()
