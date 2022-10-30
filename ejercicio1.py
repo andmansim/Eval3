@@ -86,3 +86,11 @@ def cambiar_disco(t, agu1, agu3, agu2):
     if t == 1:#Ficha 1 = el de la cima
         m = agu1.desapilar()
         agu3.apilar(m)
+        return
+    cambiar_disco(t-1, agu1, agu2, agu3) #Rotamos agujas para ir quitando y añadiendo
+    m = agu1.desapilar()
+    agu3.apilar(m)
+    cambiar_disco(t-1, agu2, agu3, agu1)
+
+cambiar_disco(aguja1.tamaño(), aguja1, aguja3, aguja2)
+
