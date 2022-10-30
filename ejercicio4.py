@@ -105,3 +105,10 @@ class Polinomio(object):
                 pol2 = pol2.sig
             pol1 = pol1.sig
         return paux
+    
+p = Polinomio()
+p1 = Polinomio()
+p.agregar_termino(4,3) #grado, número
+p1.agregar_termino(4,5)
+print(p.mostar())
+print(p1.mostrar())
