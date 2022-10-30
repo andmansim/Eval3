@@ -48,8 +48,8 @@ class Polinomio(object):
         pol = ''
         if aux is not None:
             while aux is not None:
-                signo += '+'
-                pol += signo + str(aux.info.valor) + 'x^'+ str(aux.info.termino)
+                signo = '+'
+                pol = signo + str(aux.info.valor) + 'x^'+ str(aux.info.termino)
                 aux = aux.sig
         return pol
     
@@ -65,9 +65,9 @@ class Polinomio(object):
     def restar(polinomio1, polinomio2):
         paux = Polinomio()
         mayor = polinomio1 if (polinomio1.grado > polinomio2.grado) else polinomio2
-        menor = polinomio1 if (polinomio1.grado < polinomio2.grado) else polinomio2
+
         for i in range(0, mayor.grado + 1):
-            total = Polinomio.obtener_valor(mayor, i) - Polinomio.obtener_valor(menor, i)
+            total = Polinomio.obtener_valor(polinomio1, i) - Polinomio.obtener_valor(polinomio2, i)
             if total != 0:
                 Polinomio.agregar_termino(paux, i , total)
         return paux
@@ -88,15 +88,15 @@ class Polinomio(object):
                 pol2 = pol2.sig
             pol1 = pol1.sig
         return paux
-    #VER QUE HAY QUE MODIFICAR PARA QUE SE DIVIDAN
+   
     def dividir(polinomio1, polinomio2):
         paux = Polinomio()
         pol1 = polinomio1.termino_mayor
         while pol1 is not None:
             pol2 = polinomio2.termino_mayor
             while pol2 is not None:
-                termino = pol1.info.termino + pol2.info.termino
-                valor = pol1.info.valor * pol2.info.valor
+                termino = pol1.info.termino - pol2.info.termino
+                valor = pol1.info.valor / pol2.info.valor
                 if Polinomio.obtener_valor(paux, termino) != 0:
                     valor += Polinomio.obtener_valor(paux, termino)
                     Polinomio.modificar_termino(paux, termino, valor)
