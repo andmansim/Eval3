@@ -58,3 +58,20 @@ while contador != 6:
     contador = contador + 1
     
 total = suma - resta
+
+def recursivo(contador, i, j, h, suma, resta):
+    if 0 < contador < 3:
+        
+        uno = det_iterativa(matriz, i, j, h)
+        suma = suma + uno
+        i, j, h = parametros(i, j, h, contador)
+        
+    else:
+
+        dos = det_iterativa(matriz, h, j, i)
+        resta = resta + dos
+        i, j, h = parametros(h, j, i, contador)
+    recursivo(contador-1, i, j, h, suma, resta)
+    
+
+recursivo(6, i, j, h, 0, 0)
