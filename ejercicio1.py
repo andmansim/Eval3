@@ -41,15 +41,6 @@ class Pila(object):
         return pila.tamanio
 
 
-aguja1 = Pila()
-aguja2 = Pila()
-aguja3 = Pila()
-
-#El disco más pequeño esel 74 y el más grande el 1
-for i in range(1, 75):
-    aguja1.apilar(i)
-
-
 
 def cambiar_disco(t, agu1, agu3, agu2):
     if t == 1:#Ficha 1 = el de la cima
@@ -60,9 +51,16 @@ def cambiar_disco(t, agu1, agu3, agu2):
     m = agu1.desapilar()
     agu3.apilar(m)
     cambiar_disco(t-1, agu2, agu3, agu1)
+ 
+#main   
+aguja1 = Pila()
+aguja2 = Pila()
+aguja3 = Pila()
+
+#El disco más pequeño esel 74 y el más grande el 1
+for i in range(1, 75):
+    aguja1.apilar(i)
+
 
 cambiar_disco(aguja1.tamaño(), aguja1, aguja3, aguja2)
 
-print(aguja1.tamaño())
-print(aguja2.tamaño())
-print(aguja3.tamaño())
