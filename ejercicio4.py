@@ -115,3 +115,6 @@ print(p1.mostrar())
 
 resta = p1.restar(p)
 print(resta.mostrar())
+
+div = p1.dividir(p)
+print(div.mostar())
