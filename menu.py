@@ -55,12 +55,14 @@ def iniciar():
                 if contador < 3:
                     
                     uno = e2.det_iterativa(matriz, i, j, h)
+                    print(uno)
                     suma = suma + uno
                     print(suma)
                     i, j, h = e2.parametros(i, j, h, contador)
                 else:
 
                     dos = e2.det_iterativa(matriz, h, j, i)
+                    print(dos)
                     resta = resta + dos
                     print(resta)
                     i, j, h = e2.parametros(h, j, i, contador)
