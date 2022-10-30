@@ -41,24 +41,6 @@ class Pila(object):
         return pila.tamanio
 
 
-    def barrido(pila):
-        #Muestra el contenido de una pila sin perder datos
-        #creamos una pila adicional llamada paux, donde vamos a reapilar los datos de la pila principal. 
-        #Vamos sacando uno por uno los datos de la pila y damos su valor, luego los metemos a paux
-        #cuando terminamos, desapilamos paux y los volvemos a meter a la primera pila
-        paux = Pila()
-        while not pila.pila_vacia():
-            dato = pila.desapilar()
-            print(dato)
-            paux.apilar(dato)
-            return dato
-        while not paux.pila_vacia():
-            dato = paux.desapilar()
-            print(dato)
-            pila.apilar(dato)
-            return dato
-        
-
 
 '''def comprobar(aguja, disco):
     if aguja.en_cima() == None:
@@ -99,56 +81,8 @@ for i in range(1, 75):
     aguja1.apilar(i)
 print(aguja1.en_cima())
 
-def quitar_agujas(aguja):
-    quito_d = aguja.desapilar()
-    print('Quito ' + str(quito_d) + ' de ' + str(aguja))
-    return quito_d
 
-def agujas(aguja, disco):
-    c, pila = comprobar(aguja, disco) #Comprueba si puedo añadir ese elemento a la aguja
-    if c :#Si puedo, entonces lo añade y nos devuelve True
-        pila.apilar(disco)
-        print('Añado ' + str(disco) + ' a ' +  str(pila))
-        return True
-    else:#no puedo pues nos devuelve False
-        return False
-
-def comprobar(aguja, disco):
-    if aguja.en_cima() == None:
-        return True, aguja
-    elif disco > aguja.en_cima():
-        return True, aguja
-    else:
-        return False, aguja
-
-while aguja3.tamaño() != 74:
-    quito = quitar_agujas(aguja1)
-    a = agujas(aguja3, quito)
-    if a == False:
-        a = agujas(aguja2, quito)
-        if a == False:
-            if aguja2.en_cima() > aguja3.en_cima():
-                quito = quitar_agujas(aguja2)
-                a = agujas(aguja1, quito)
-                
-    
-
-
-
-'''quito_d = quitar_agujas(aguja1)
-c, pila = comprobar(aguja2, quito_d)
-print(c)
-organizar(c, pila, quito_d)
-
-while aguja3.tamaño() != 74:
-    #if aguja1.pila_vacia() is not None: #Mirar esta condicion 
-        quito_d = quitar_agujas(aguja1)
-        c, pila = cambio_aguja(pila, aguja1, aguja2, aguja3)
-        print(c)
-        print('Tamaño aguja 1 ' + str(aguja1.tamaño()) + '\n')
-        print('Tamaño aguja 2 ' + str(aguja2.tamaño())+ '\n')
-        print('Tamaño aguja 3 ' + str(aguja3.tamaño())+ '\n')
-        organizar(c, pila, quito_d)
-    #else:
-        quito_d = quitar_agujas(aguja2)
-'''
+def cambiar_disco(t, agu1, agu3, agu2):
+    if t == 1:#Ficha 1 = el de la cima
+        m = agu1.desapilar()
+        agu3.apilar(m)
