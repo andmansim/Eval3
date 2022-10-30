@@ -44,7 +44,7 @@ def iniciar():
                     [2, 3, 4], 
                   [5, 6, 7]]
             #FORMA ITERATIVA
-            i = 0
+            '''i = 0
             j = 1
             h = 2
             suma = 0
@@ -66,8 +66,8 @@ def iniciar():
                     resta = resta + dos
                     i, j, h = e2.parametros(i, j, h, contador)
                 contador = contador + 1
-    
-            total = suma - resta
+    '''
+            total = e2.iterar(0, 1, 2, 0, 0, 0, matriz)
 
             print('El determinante da ' + str(total))
             

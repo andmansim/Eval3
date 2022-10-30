@@ -1,6 +1,4 @@
-matriz = [[1, 2, 3], 
-                    [2, 3, 4], 
-                  [5, 6, 7]]
+
 
 def comprobacion(i, j, h):
     if i >= 3:
@@ -37,7 +35,7 @@ def det_iterativa(matriz, i, j, h):
     pri = matriz[0][i] * matriz[1][j] * matriz[2][h]
     return pri
 
-def iterar(i,j,h, resta, suma, contador):
+def iterar(i,j,h, resta, suma, contador, matriz):
     while contador != 6:
 
         if contador < 3:
