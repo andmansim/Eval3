@@ -16,9 +16,9 @@ def iniciar():
         print("[1] Torres de Hanoi")
         print("[2] Determinante 3x3")
         print("[3] Naves Star Wars ")
-        print("[4]  ")
-        print("[5]  ")
-        print("[6]  ")
+        print("[4] Polinomio ")
+        print("[5] Hash")
+        print("[6] Salir")
         print("========================")
         
         opcion = input("> ")
