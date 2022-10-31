@@ -26,7 +26,23 @@ def cifrar(texto,clave, a, n):
                 mensaje = mensaje + cod
                 print(mensaje)
             else:
-                print('NO')
+                for h in range(len(n)):
+                    if texto[i] == n[h]:
+                        cod1 = []
+                        nuevo=h+int(clave) #Me desplazo en el abecedario en función a la clave
+                        if nuevo <len(n):
+                            b = a[h + 1:nuevo + 1]
+                            print( n[h + 1:nuevo + 1])
+                            print(print(cod1))
+                            print(texto[i])
+                        if nuevo >len(n) - 1 : #En el caso de que me pase del abecedario, calculo el modulo
+                            print(n[nuevo%(len(n))])
+                            b = n[nuevo%(len(n)) : nuevo%(len(n)) + 8]
+                            print(texto[i])
+                        cod1.append(b[::-1])
+                        mensaje = mensaje + cod1
+                        print(mensaje)
+                        print('NO')
     
     mensaje = ''.join(mensaje)
     return mensaje
