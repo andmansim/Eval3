@@ -18,7 +18,6 @@ def cifrar(texto,clave, a):
                     b = a[nuevo%len(a) : nuevo%len(a) + 8]
                 cod.append(b[::-1])
                 mensaje = mensaje + cod
-                print(mensaje)
             else:
                 pass
                         
