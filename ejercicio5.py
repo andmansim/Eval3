@@ -1,3 +1,3 @@
-import hashlib
-
-cadena_encrip = input('Introduce el texro a cifrar ')
+mensaje_cifrar = input('Introduce el mensaje: ')
+if mensaje_cifrar == mensaje_cifrar.upper():
+    
