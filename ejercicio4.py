@@ -11,23 +11,21 @@ class Polinomio(object):
     def __init__(self):
         self.termino_mayor = None
         self.grado = -1
-    
+       
     def agregar_termino(polinomio, termino, valor):
-        aux = Nodo()
-        dato = datoPolinomio(valor, termino)
-        aux.info = dato
+        aux= Nodo()
+        dato= datoPolinomio(valor, termino)
+        aux.info= dato
         if termino > polinomio.grado:
-            aux.sig = polinomio.termino_mayor
+            aux.sig= polinomio.termino_mayor
             polinomio.termino_mayor = aux
-            polinomio.grado = termino
+            polinomio.grado= termino
         else:
-            actual = polinomio.termino_mayor
-            
-            while actual.sig is not None and termino < actual.sig.info.termino:
+            actual= polinomio.termino_mayor
+            while (actual.sig is not None and termino < actual.sig.info.termino):
                 actual = actual.sig
-            aux.sig = actual.sig
-            actual.sig = aux
-            
+            aux.sig= actual.sig
+            actual.sig=aux
     def modificar_termino(polinomio, termino, valor):
         aux = polinomio.termino_mayor
         while aux is not None and aux.info.termino != termino:
