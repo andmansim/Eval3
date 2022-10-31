@@ -115,13 +115,15 @@ def iniciar():
 
             div = p1.dividir(p)
             print('División de polinomios ' + str(div.mostrar()))
-
-            p = p.eliminar_termino(4)
-            print('Eliminar un término del polinomio 1 ' + str(p.mostrar()))
+            
             m = p.buscar(3,2)
             print (m)
             m2 = p.buscar(2,4)
             print (m2)
+            
+            p = p.eliminar_termino(4)
+            print('Eliminar un término del polinomio 1 ' + str(p.mostrar()))
+            
                         
                 
         if opcion == '5':
