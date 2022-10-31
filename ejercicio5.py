@@ -6,21 +6,16 @@ a = "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklm
 mensaje = []
 def cifrar(texto,clave, a):
     mensaje = []
-    longitud=len(texto) #Calculamos la longitud del texto para recorrerlo
-    for i in range (0,longitud): #Bucle para recorrer el texto
-        for j in range (0,26): #Bucle para recorrer el Abecedario
-            if texto[i]==a[j]: #comparo las letras una por una
+    for i in range (0,len(texto)): 
+        for j in range (0,len(a)): 
+            if texto[i]==a[j]:
                 cod = []
-                nuevo=j+int(clave) #Me desplazo en el abecedario en función a la clave
-                if nuevo <26:
+                nuevo=j+int(clave) 
+                if nuevo <len(a):
                     b = a[j + 1:nuevo + 1]
-                    print( a[j + 1:nuevo + 1])
-                    print(print(cod))
-                    print(texto[i])
-                if nuevo >25 : #En el caso de que me pase del abecedario, calculo el modulo
-                    print(a[nuevo%26])
-                    b = a[nuevo%26 : nuevo%26 + 8]
-                    print(texto[i])
+                    
+                if nuevo >len(a) -1 : 
+                    b = a[nuevo%len(a) : nuevo%len(a) + 8]
                 cod.append(b[::-1])
                 mensaje = mensaje + cod
                 print(mensaje)
