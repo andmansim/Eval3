@@ -20,6 +20,7 @@ def cifrar(texto,clave, a):
     return mensaje
 
 def descifrar(texto, clave, a):
+    des = []
     for i  in range(len(texto)):
         for j in range(len(a)):
             
