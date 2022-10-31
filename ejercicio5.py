@@ -1,10 +1,11 @@
 mensaje_cifrar = input('Introduce el mensaje: ')
 
 m1 = mensaje_cifrar.lower()#todo a minúscula
-m1 = m1.split()#quitamos espacios
+#m1 = m1.split()#quitamos espacios
 a = 'abcdefghijklmnñopqrstuvwxyz'
+n = 'ªº\!"·$%&/()=?¿¡+`][{¨}-_.:;,^' 
 mensaje = []
-def cifrar(texto,clave):
+def cifrar(texto,clave, a, n):
     mensaje = []
     longitud=len(texto) #Calculamos la longitud del texto para recorrerlo
     for i in range (0,longitud): #Bucle para recorrer el texto
@@ -14,7 +15,6 @@ def cifrar(texto,clave):
                 nuevo=j+int(clave) #Me desplazo en el abecedario en función a la clave
                 if nuevo <26:
                     b = a[j + 1:nuevo + 1]
-                    
                     print( a[j + 1:nuevo + 1])
                     print(print(cod))
                     print(texto[i])
@@ -27,9 +27,10 @@ def cifrar(texto,clave):
                 print(mensaje)
             else:
                 print('NO')
-    for h in mensaje:
-        v = ''.join(h)
-    return v 
-cifrar(m1, 8)
+    
+    mensaje = ''.join(mensaje)
+    return mensaje
+ns = cifrar(m1, 8, a, n)
+print(ns)
 
 
