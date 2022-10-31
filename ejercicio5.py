@@ -33,7 +33,7 @@ def descifrar(texto, clave, a):
             c = i[:9]
             des.append(c[::-1])
             texto.replace(c)
-            des.append()
+            
             if texto[i] == a[j]:
                 nuevo =j-int(clave) 
                 
