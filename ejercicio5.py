@@ -27,9 +27,10 @@ def cifrar(texto,clave, a):
 men = cifrar(m1, 8, a)
 print(men)
 def descifrar(texto, clave, a):
+    des = []
     for i  in range(len(texto)):
         for j in range(len(a)):
-            des = []
+            
             c = i[:9]
             des.append(c[::-1])
             texto.replace(c)
