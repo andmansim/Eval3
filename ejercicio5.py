@@ -26,5 +26,8 @@ def cifrar(texto,clave, a):
     return mensaje
 ns = cifrar(m1, 8, a)
 print(ns)
-
-
+def descifrar(texto, clave, a):
+    for i  in range(len(texto)):
+        for j in range(len(a)):
+            if texto[i] == a[j]:
+                nuevo =j-int(clave) 
