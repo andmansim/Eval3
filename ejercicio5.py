@@ -29,5 +29,11 @@ print(ns)
 def descifrar(texto, clave, a):
     for i  in range(len(texto)):
         for j in range(len(a)):
+            des = []
+            c = i[:9]
+            des.append(c[::-1])
+            texto.replace(c)
+            des.append()
             if texto[i] == a[j]:
                 nuevo =j-int(clave) 
+                
