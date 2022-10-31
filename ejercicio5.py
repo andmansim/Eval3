@@ -1,9 +1,3 @@
-mensaje_cifrar = input('Introduce el mensaje: ')
-
-m1 = mensaje_cifrar.lower()#todo a minúscula
-#m1 = m1.split()#quitamos espacios
-a = "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}"
-mensaje = []
 def cifrar(texto,clave, a):
     mensaje = []
     for i in range (0,len(texto)): 
@@ -24,10 +18,8 @@ def cifrar(texto,clave, a):
     
     mensaje = ''.join(mensaje)
     return mensaje
-men = cifrar(m1, 8, a)
-print(men)
+
 def descifrar(texto, clave, a):
-    des = []
     for i  in range(len(texto)):
         for j in range(len(a)):
             
@@ -38,4 +30,3 @@ def descifrar(texto, clave, a):
             if texto[i] == a[j]:
                 nuevo =j-int(clave) 
                 
-descifrar(men, 8, a)

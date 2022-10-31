@@ -127,8 +127,13 @@ def iniciar():
                         
                 
         if opcion == '5':
-            print("...\n")
-            
+            print("Cifrar y descifrar...\n")
+            mensaje_cifrar = input('Introduce el mensaje: ')
+            m1 = mensaje_cifrar.lower()#todo a minúscula
+            a = "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}"
+            men = e5.cifrar(m1, 8, a)
+            print(men)
+            e5.descifrar(men, 8, a)
             
         if opcion == '6':
             print("Saliendo...\n")
