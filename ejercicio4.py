@@ -117,3 +117,14 @@ class Polinomio(object):
                 
         return aux
        
+
+    def buscar(polinomio, termino,valor):
+        aux= polinomio.termino_mayor
+        while aux is not None and aux.info.termino +1 > termino:  
+           
+            if aux is not None and aux.info.termino == termino:
+                if  aux.info.valor == valor:
+                    return 'encontrado'
+                else:
+                    return "no encontrado"  
+            aux=aux.sig
