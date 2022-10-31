@@ -102,6 +102,8 @@ def iniciar():
         if opcion == '4':
             print("Polinomio...\n")
             p = e4.Polinomio()
+            p.agregar_termino( 3, 2) #grado, numero
+            p.agregar_termino( 2, 4) #grado, numero
             p1 = e4.Polinomio()
             p.agregar_termino(4,3) #grado, número
             p1.agregar_termino(4,5)
@@ -116,7 +118,11 @@ def iniciar():
 
             p = p.eliminar_termino(4)
             print('Eliminar un término del polinomio 1 ' + str(p.mostrar()))
-                    
+            m = p.buscar(3,2)
+            print (m)
+            m2 = p.buscar(2,4)
+            print (m2)
+                        
                 
         if opcion == '5':
             print("...\n")
